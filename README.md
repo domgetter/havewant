@@ -21,8 +21,12 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-HaveWant.new("hello", "HELLO").answers
-#=> upcase
+HaveWant::HaveWant.new("hello", "HELLO").answers
+#=> [:upcase, :swapcase, :upcase!, :swapcase!]
+HaveWant::HaveWant.new("hello", :hello).answers
+#=> [:intern, :to_sym]
+HaveWant::HaveWant.new([5,6,7,8,9], 2, 7).answers
+#=> [:[], :at, :fetch, :delete_at, :slice, :slice!]
 ```
 
 ## Development
